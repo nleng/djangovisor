@@ -12,8 +12,8 @@ import os
 collector_url = "http://djangovisor.cfs-me-research.net/djangovisor/collector"
 
 # login for the local supervisor web interface:
-username = 'corni'
-password = 'q3eq3ew4r'
+username = 'yourname'
+password = 'yourpassword'
 port = 9001
 
 #####################################################################################
