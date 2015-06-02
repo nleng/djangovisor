@@ -1,6 +1,6 @@
 # djangovisor
 
-This is a django project, which collects data from <a href="https://github.com/Supervisor/supervisor" target="_blank">supervisor</a> instances on one or multiple servers, stores visualizes it using <a href="http://getbootstrap.com/" target="_blank">bootstrap</a> and the javascript library <a href="http://dygraphs.com/" target="_blank">dygraphs</a>. Example website: http://djangovisor.cfs-me-research.net/djangovisor/. 
+This is a django project, which collects data from <a href="https://github.com/Supervisor/supervisor" target="_blank">supervisor</a> instances on one or multiple servers, stores it and plots it it using <a href="http://getbootstrap.com/" target="_blank">bootstrap</a> and the javascript library <a href="http://dygraphs.com/" target="_blank">dygraphs</a>. Example website: http://djangovisor.cfs-me-research.net/djangovisor/. 
 
 There is a very similar app for the server monitoring tool <a href="https://mmonit.com/monit/" target="_blank">monit</a> called <a href="https://github.com/nleng/django-monit-collector" target="_blank">django-monit-collector</a>.
 
@@ -35,18 +35,18 @@ Include djangovisor in your url.py:
 ```
 url(r'^djangovisor/', include('djangovisor.urls')),
 ```
-In your supervisord.conf enable the xml web interface:
+On every server that should be montored enable the xml web interface in your supervisord.conf:
 ```
 [inet_http_server]
 port=*:9001
 username=yourname
 password=yourpassword
 ```
-If you use another port, you would have to also change it in the sender.py script. Also, the port must not be blocked by the firewall, e.g.
+If you use another port, you would have to change it in the sender.py script. Also, the port must not be blocked by the firewall, e.g.
 ```
 ufw allow 9001
 ```
-Since supervisor does not send process cpu nad memory information, we use a script sender.py, which you have to copy to any server you want to observe. 
+Since supervisor does not send process cpu and memory information, we use a script sender.py, which you have to copy to any server you want to observe. 
 You have to change the user and password in the script sender.py. Then the simplest solution is to just run a cronjob, e.g. every minute:
 ```
 crontab -e
