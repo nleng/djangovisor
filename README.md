@@ -35,7 +35,7 @@ Include djangovisor in your url.py:
 ```
 url(r'^djangovisor/', include('djangovisor.urls')),
 ```
-On every server that should be montored enable the xml web interface in your supervisord.conf:
+On every server that should be monitored enable the xml web interface in your supervisord.conf:
 ```
 [inet_http_server]
 port=*:9001
