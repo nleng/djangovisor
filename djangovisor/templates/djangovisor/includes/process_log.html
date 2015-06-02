@@ -1,0 +1,11 @@
+{% load djangovisor_tags %}
+<div id="process_log">
+  <div class="col-md-12 column">
+      <h3>stderr log tail </h3>
+      <pre>{{ process.log_stderr|line_breaks }}</pre>
+  </div>
+  <div class="col-md-12 column">
+      <h3>stdout log tail </h3>
+      <pre>{{ process.log_stdout|line_breaks }}</pre>
+  </div>
+</div>

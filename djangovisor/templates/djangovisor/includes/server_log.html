@@ -1,0 +1,5 @@
+{% load djangovisor_tags %}
+<div id="supervisor_logtail">
+  <h3>Supervisor log tail </h3>
+  <pre>{{ server.supervisor_logtail|line_breaks }}</pre>
+</div>
