@@ -4,10 +4,7 @@ import time
 import settings
 register = template.Library()
 
-try:
-    monit_update_period = settings.MONIT_UPDATE_PERIOD
-except:
-    monit_update_period = 60
+update_period = getattr(settings, 'UPDATE_PERIOD', 60)
 
 @register.filter
 def timestamp_to_date(timestamp):
@@ -19,7 +16,7 @@ def timestamp_to_date(timestamp):
 def time_class(timestamp):
     if not isinstance(timestamp, int):
         return ""
-    if int(time.time()) > int(timestamp) + 3*monit_update_period:
+    if int(time.time()) > int(timestamp) + 3*update_period:
         return "danger"
     return ""
 
