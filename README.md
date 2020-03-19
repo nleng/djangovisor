@@ -1,6 +1,6 @@
 # djangovisor
 
-This is a django project, which collects data from <a href="https://github.com/Supervisor/supervisor" target="_blank">supervisor</a> instances on one or multiple servers, stores it and plots it it using <a href="http://getbootstrap.com/" target="_blank">bootstrap</a> and the javascript library <a href="http://dygraphs.com/" target="_blank">dygraphs</a>. Example website: http://djangovisor.cfsme-network.de. 
+This is a django project, which collects data from <a href="https://github.com/Supervisor/supervisor" target="_blank">supervisor</a> instances on one or multiple servers, stores it and plots it it using <a href="http://getbootstrap.com/" target="_blank">bootstrap</a> and the javascript library <a href="http://dygraphs.com/" target="_blank">dygraphs</a>. 
 
 There is a very similar app for the server monitoring tool <a href="https://mmonit.com/monit/" target="_blank">monit</a> called <a href="https://github.com/nleng/django-monit-collector" target="_blank">django-monit-collector</a>.
 
